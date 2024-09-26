@@ -29,43 +29,43 @@
       </tr>
       <tr>
         <td class="title-text">STUDIO</td>
-        <td>Php 500</td>
-        <td>Php 650</td>
-        <td>Php 1,250</td>
-        <td>Php 1,450</td>
-        <td>Php 2,550</td>
+        <td>Php 400</td>
+        <td>Php 550</td>
+        <td>Php 1,150</td>
+        <td>Php 1,350</td>
+        <td>Php 2,450</td>
         <td>Php 6,650</td>
         <td>Php 25,500</td>
-        <td>Php 165</td>
+        <td>Php 135</td>
       </tr>
       <tr>
         <td class="title-text">STANDARD</td>
-        <td>Php 550</td>
-        <td>Php 685</td>
-        <td>Php 1,285</td>
-        <td>Php 1,485</td>
-        <td>Php 2,650</td>
+        <td>Php 450</td>
+        <td>Php 585</td>
+        <td>Php 1,185</td>
+        <td>Php 1,385</td>
+        <td>Php 2,550</td>
         <td>Php 7,000</td>
         <td>Php 30,000</td>
-        <td>Php 185</td>
+        <td>Php 150</td>
       </tr>
       <tr>
         <td class="title-text">STANDARD TWIN</td>
-        <td>Php 550</td>
-        <td>Php 685</td>
-        <td>Php 1,285</td>
-        <td>Php 1,485</td>
-        <td>Php 2,750</td>
+        <td>Php 450</td>
+        <td>Php 585</td>
+        <td>Php 1,185</td>
+        <td>Php 1,385</td>
+        <td>Php 2,650</td>
         <td>--</td>
         <td>--</td>
-        <td>Php 170</td>
+        <td>Php 145</td>
       </tr>
       <tr>
         <td class="title-text">EURO SUITE 1</td>
-        <td>Php 650</td>
-        <td>Php 730</td>
-        <td>Php 1,330</td>
-        <td>Php 1,530</td>
+        <td>Php 550</td>
+        <td>Php 630</td>
+        <td>Php 1,230</td>
+        <td>Php 1,430</td>
         <td>Php 3,050</td>
         <td>--</td>
         <td>--</td>
@@ -73,10 +73,10 @@
       </tr>
       <tr>
         <td class="title-text">EURO SUITE 2</td>
-        <td>Php 750</td>
-        <td>Php 905</td>
-        <td>Php 1,505</td>
-        <td>Php 1,705</td>
+        <td>Php 650</td>
+        <td>Php 730</td>
+        <td>Php 1,330</td>
+        <td>Php 1,530</td>
         <td>Php 3,450</td>
         <td>--</td>
         <td>--</td>
@@ -136,15 +136,13 @@
         const currentDate = new Date();
         const day = currentDate.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
         const hour = currentDate.getHours(); // Current hour in 24-hour format
-        const minutes = currentDate.getMinutes(); // Current minutes
 
         // Check if the current time is within the weekend rate period
         if (
           day === 5 || // All day Friday
           day === 6 || // All day Saturday
-          day === 0
+          day === 0 // All day Sunday
         ) {
-          // All day Sunday
           document.getElementById("rateTitle").textContent = "Weekend Rate";
           document.getElementById("validText").textContent =
             "Valid for Weekend Only (Friday 12:00 AM - Sunday 11:59 PM)";
@@ -152,9 +150,8 @@
           day === 1 || // All day Monday
           day === 2 || // All day Tuesday
           day === 3 || // All day Wednesday
-          day === 4
+          day === 4 // All day Thursday
         ) {
-          // All day Thursday
           document.getElementById("rateTitle").textContent = "Weekday Rate";
           document.getElementById("validText").textContent =
             "Valid for Weekday Only (Monday 12:00 AM - Thursday 11:59 PM)";
